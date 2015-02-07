@@ -1,0 +1,162 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'httpster' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose cache add [ 'httpster', null ]
+5 verbose cache add name=undefined spec="httpster" args=["httpster",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'httpster',
+6 verbose parsed url   path: 'httpster',
+6 verbose parsed url   href: 'httpster' }
+7 silly lockFile 1825d6e9-httpster httpster
+8 verbose lock httpster /Users/jeroenberndsen/.npm/1825d6e9-httpster.lock
+9 silly lockFile 1825d6e9-httpster httpster
+10 silly lockFile 1825d6e9-httpster httpster
+11 verbose addNamed [ 'httpster', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile a2556c8b-httpster httpster@
+14 verbose lock httpster@ /Users/jeroenberndsen/.npm/a2556c8b-httpster.lock
+15 silly addNameRange { name: 'httpster', range: '*', hasData: false }
+16 verbose request where is /httpster
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id cb395f1df0deceb5
+19 verbose url raw /httpster
+20 verbose url resolving [ 'https://registry.npmjs.org/', './httpster' ]
+21 verbose url resolved https://registry.npmjs.org/httpster
+22 verbose request where is https://registry.npmjs.org/httpster
+23 info trying registry request attempt 1 at 12:57:52
+24 http GET https://registry.npmjs.org/httpster
+25 http 200 https://registry.npmjs.org/httpster
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Sat, 07 Feb 2015 11:57:53 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"CL5IFU6I93236IVXE26OQB0H9"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '17476',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-ams4125-AMS',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1423310272.852838,VS0,VE491',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'httpster', range: '*', hasData: true }
+28 silly addNameRange versions [ 'httpster',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.3.1',
+28 silly addNameRange     '0.3.2',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.5.0',
+28 silly addNameRange     '0.5.1',
+28 silly addNameRange     '0.5.2',
+28 silly addNameRange     '0.6.0',
+28 silly addNameRange     '0.7.0',
+28 silly addNameRange     '0.9.0',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.0.1' ] ]
+29 verbose addNamed [ 'httpster', '1.0.1' ]
+30 verbose addNamed [ '1.0.1', '1.0.1' ]
+31 silly lockFile 36193f18-httpster-1-0-1 httpster@1.0.1
+32 verbose lock httpster@1.0.1 /Users/jeroenberndsen/.npm/36193f18-httpster-1-0-1.lock
+33 silly lockFile 872a26ce--org-httpster-httpster-1-0-1-tgz https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+34 verbose lock https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz /Users/jeroenberndsen/.npm/872a26ce--org-httpster-httpster-1-0-1-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz',
+35 verbose addRemoteTarball   'f1683751aaf2401f60f79aed94a4180cf1c2084a' ]
+36 info retry fetch attempt 1 at 12:57:53
+37 verbose fetch to= /var/folders/vx/rn3t0brn3fd6210n_5r9hrsc0000gn/T/npm-698-GVBwqq4J/registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+38 http GET https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+39 http 200 https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+40 silly lockFile 872a26ce--org-httpster-httpster-1-0-1-tgz https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+41 silly lockFile 872a26ce--org-httpster-httpster-1-0-1-tgz https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz
+42 silly lockFile 36193f18-httpster-1-0-1 httpster@1.0.1
+43 silly lockFile 36193f18-httpster-1-0-1 httpster@1.0.1
+44 silly lockFile a2556c8b-httpster httpster@
+45 silly lockFile a2556c8b-httpster httpster@
+46 silly resolved [ { author:
+46 silly resolved      { name: 'Simeon Bateman',
+46 silly resolved        email: 'simeon@simb.net',
+46 silly resolved        url: 'http://www.simb.net' },
+46 silly resolved     name: 'httpster',
+46 silly resolved     description: 'Simple http server for static content',
+46 silly resolved     version: '1.0.1',
+46 silly resolved     repository: { type: 'git', url: 'git://github.com/SimbCo/httpster.git' },
+46 silly resolved     keywords: [ 'http', 'web', 'server' ],
+46 silly resolved     main: './lib/httpster',
+46 silly resolved     bin: { httpster: './bin/httpster' },
+46 silly resolved     preferGlobal: 'true',
+46 silly resolved     scripts: { prepublish: 'coffee -o lib/ src/' },
+46 silly resolved     dependencies:
+46 silly resolved      { commander: '1.2.x',
+46 silly resolved        cors: '2.4.x',
+46 silly resolved        express: '3.2.x',
+46 silly resolved        'node-env-file': '0.1.4',
+46 silly resolved        'serve-index': '^1.6.0' },
+46 silly resolved     devDependencies: { 'coffee-script': '1.6.x', should: '~1.2.2', mocha: '~1.11.0' },
+46 silly resolved     engines: { node: '0.10.x' },
+46 silly resolved     gitHead: '22a094e65ebadafce54d77e5eb84dc80bda98dda',
+46 silly resolved     bugs: { url: 'https://github.com/SimbCo/httpster/issues' },
+46 silly resolved     homepage: 'https://github.com/SimbCo/httpster',
+46 silly resolved     _id: 'httpster@1.0.1',
+46 silly resolved     _shasum: 'f1683751aaf2401f60f79aed94a4180cf1c2084a',
+46 silly resolved     _from: 'httpster@',
+46 silly resolved     _npmVersion: '1.4.28',
+46 silly resolved     _npmUser: { name: 'simbco', email: 'simeon@simb.co' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: 'f1683751aaf2401f60f79aed94a4180cf1c2084a',
+46 silly resolved        tarball: 'http://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/httpster/-/httpster-1.0.1.tgz' } ]
+47 info install httpster@1.0.1 into /usr/local/lib
+48 info installOne httpster@1.0.1
+49 verbose lib/node_modules/httpster unbuild
+50 verbose tar unpack /Users/jeroenberndsen/.npm/httpster/1.0.1/package.tgz
+51 silly lockFile 6e1c8633--local-lib-node-modules-httpster tar:///usr/local/lib/node_modules/httpster
+52 verbose lock tar:///usr/local/lib/node_modules/httpster /Users/jeroenberndsen/.npm/6e1c8633--local-lib-node-modules-httpster.lock
+53 silly lockFile abdf4618-n-npm-httpster-1-0-1-package-tgz tar:///Users/jeroenberndsen/.npm/httpster/1.0.1/package.tgz
+54 verbose lock tar:///Users/jeroenberndsen/.npm/httpster/1.0.1/package.tgz /Users/jeroenberndsen/.npm/abdf4618-n-npm-httpster-1-0-1-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/httpster'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/httpster']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/httpster',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/httpster',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:108:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 14.1.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "httpster"
+60 error cwd /Users/jeroenberndsen/Development/presentations/introduction-angular-for-dotnet
+61 error node -v v0.10.35
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/httpster
+64 error fstream_path /usr/local/lib/node_modules/httpster
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/httpster'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:108:15)
+71 verbose exit [ 3, true ]
