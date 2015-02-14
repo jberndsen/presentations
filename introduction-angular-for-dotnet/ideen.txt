@@ -1,0 +1,49 @@
+// INTRODUCTIE: 5 mins
+welkom, wie ik ben, waar ik over ga praten
+
+ik ga heel snel een uur heel veel vertellen op een globaal niveau,
+onderbreek me vooral als iets onduidelijk is. Vooral wil ik jullie inspireren.
+
+even snel achtergrond bepalen:
+- wie van jullie is programmeur of software architect?
+- wie van jullie ontwikkeld web applicaties?
+- waarmee?
+- wie van jullie gebruikt MVC?
+- wie van jullie ontwikkeld SPAs?
+- waarmee?
+- wie van jullie bouwt reactive cloud applicaties?
+
+
+// GESCHIEDENIS: 10 mins
+systemen worden steeds complexer (reactive, distributed computing, message driven event paradigms)
+
+
+// INTRO ANGULAR ZELF: 20 mins
+nog steeds html…
+
+hoe past angular in het plaatje, welk probleem lost angular op: 5 mins. ook iets zeggen over communities,
+events, kennisdeling en enthousiasme.
+
+introductie angular - data binding, controllers, DI, directives and filters,
+   $http, custom directives
+
+// INTEGRATIE: 10 mins
+hoe knoop ik dit aan mijn huidige .NET stack: 10 mins
+ - via MVC
+ - via OWIN/Web API (nog mooiere REST)
+ - beetje bij beetje, 1 feature tegelijk
+
+// TOOLS: 5 mins
+ tools:
+  - yeoman
+  - grunt
+  - jasmine/karma/protractor (10 mins)
+
+
+// INSPIRATIE: 5 mins
+ het losbreken van een compleet framework, angular introduceert de abstractie
+ die we nodig hadden, inspiratiemateriaal van andere dingen die kunnen dankzij
+ angular. ik heb er twee gekozen, maar de lijst is te lang om op te gaan sommen:
+
+ - Ionic (2 mins)
+ - Material Design (2 mins)

@@ -37,11 +37,10 @@
 	</head>
 
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
+				<!-- INTRODUCTIE -->
 				<section>
 					<img src="img/angularjs.svg" style="border: 0; background: none; box-shadow: none" />
 					<h3>The superheroic MVW Framework</h3>
@@ -62,337 +61,188 @@
 				<section>
 					<h2>Topics</h2>
 						<ul>
-							<li class="fragment roll-in">History of ASP.NET</li>
-							<li class="fragment roll-in">Why AngularJS</li>
+							<li class="fragment roll-in">History of the web and ASP.NET</li>
+							<li class="fragment roll-in">AngularJS</li>
 							<li class="fragment roll-in">.NET integration</li>
-							<li class="fragment roll-in">Tools!</li>
+							<li class="fragment roll-in">The future, today!</li>
 						</ul>
 					</section>
 
-				<!-- nested vertical slides -->
+				<!-- GESCHIEDENIS -->
 				<section>
 					<section>
 						<h2>A short history lesson</h2>
 					</section>
 					<section>
-						<h3>ASP.NET introduced in 2002</h3>
-						<p>User Controls</p>
-						<p>Code-behind files</p>
-						<small>remember page life cycles?</small>
+						<h2>Users request and consume static information (<strong>1990</strong>)</h2>
+						<p class="orange">The world wide web is invented</p>
+						<p class="fragment">Simple HTML, some CSS</p>
+						<p class="fragment">JavaScript became standardized in 1996</p>
 					</section>
 					<section>
-							<h3>.NET 3.0 introduced in late 2006</h3>
-							<p>WPF, WCF, WWF, Windows Cardspace</p>
-							<p>.NET 3.5 late 2007, introducing LINQ</p>
+						<h2>Web 2.0: Users start producing information (<strong>2002</strong>)</h2>
+						<p class="orange">ASP.NET introduced</p>
+						<p class="fragment">User Controls</p>
+						<p class="fragment">Code-behind files</p>
+						<small class="fragment">remember page life cycles?</small>
 					</section>
 					<section>
-						<h3>.NET 4.0 introduced in 2010</h2>
-						<p>ASP.NET MVC 2</p>
-						<!-- voordelen van MVC uitleggen -->
+							<h2>The iPhone: transition to mobile-first (<strong>2007</strong>)</h2>
+							<p class="orange">.NET 3.0 introduced in late 2006</p>
+							<p class="fragment">WPF, WCF, WWF, Windows Cardspace</p>
+							<p class="fragment">.NET 3.5 late 2007, introducing LINQ and EF</p>
+					</section>
+					<section>
+						<h2>Cloud based reactive systems and big data (<strong>2010 - now</strong>)</h2>
+						<p class="orange">.NET 4.0 introduced in 2010</p>
+						<p class="fragment">ASP.NET MVC 2</p>
+						<p class="fragment">Parallel LINQ, Task Parallel Library</p>
 					</section>
 				</section>
 
+				<!-- HIER BEGINT ANGULAR INTRO -->
+				<!-- iets over dat ik vooral back-end heb beschreven, dit gaat over front-end-->
+				<!--
 				<section>
-					<div ng-app="app">
-					<h2>Data binding</h2>
-						<p>Hello, {{name}}!</p>
-						<input type="text" ng-model="name">
-					</div>
-					<br />
-						<pre><code data-trim>
+					<h2>The trend</h2>
+					<p>Applying industry-accepted design patterns and principles to the web paradigm</p>
+					<ul>
+						<li class="fragment">Seperation of concerns</li>
+						<li class="fragment">Modular design</li>
+						<li class="fragment">Testability</li>
+						<li class="fragment">A focus on quality because our dependency on our apps, mission critical, real life</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>The trend: focus!</h2>
+					<p>Do one job and do it well</p>
+					<p>Answering to ever increasing complex requirements</p>
+					<p>Allows for rapid development of new insights, since we no longer
+						build entire frameworks, we combine small things that fit well together.
+					</p>
+					<p class="fragment">So how does Angular fit in?</p>
+				</section>
+
+				<section>
+					<h2>AngularJS</h2>
+					<p>Apply the back-end trend to the front-end</p>
+
+				</section>
+
+				<section>
+					<h2>So what's the problem it's trying to solve?</h2>
+					<p>HTML is static: great for static documents</p>
+					<p>Modern web applications are not static, so HTML limits us in our expressiveness</p>
+					<p>Either we abstract away from it</p>
+				</section>
+
+				<section>
+					<h2>How does it solve it?</h2>
+					<p>Allows us to extend html, so we can build the things we need</p>
+					<p>Behaviour / view separation</p>
+				</section>
+-->
+				<!-- HIER BEGINT TECHNISCHE STUK, CODE -->
+				<section>
+					<section>
+						<div ng-app="app">
+						<h2>Data binding</h2>
+							<p>Hello, {{name}}!</p>
+							<input type="text" ng-model="name">
+						</div>
+						<br />
+							<pre><code data-trim>
 &lt;div ng-app="app"&gt;
    &lt;h2&gt;Data binding&lt;/h2&gt;
    &lt;p&gt;Hello, {{name}}!&lt;/p&gt;
    &lt;input type=&quot;text&quot; ng-model=&quot;name&quot;&gt;
 &lt;/div&gt;
-							</code></pre>
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Controllers</h2>
+						<p>Todo example here</p>
+						<p>plain javascript, no proprietary objects</p>
+						<p>so we can use all the other javascript goodness</p>
+					</section>
+
+					<section>
+						<h2>$repeat and filters</h2>
+					</section>
+
+					<section>
+						<h2>Routing</h2>
+						<p>use it to build SPAs</p>
+					</section>
+
+					<section>
+						<h2>Communicating to a back-end</h2>
+						<p>Simple with $http</p>
+					</section>
+
+					<section>
+						<h2>Custom services</h2>
+						<p>Dependency injection: declare what you need</p>
+					</section>
+
+					<section>
+						<h2>Custom directives!</h2>
+						<p>Form validation</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<section>
+						<h2>.NET integration</h2>
+						<p class="orange">It's easy!</p>
+						<p class="fragment">Just add a reference to angular.min.js</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+					<section>
+						<h2>Tools</h2>
+						<p>Plays nice with all those other neat libraries</p>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
+						<h2>Code editing</h2>
+						<p class="orange">Visual studio rocks!</p>
+					</section>
+					<section>
+						<h2>Node.js and NPM</h2>
+						<p>Integration with Visual Studio in vNext</p>
+					</section>
+					<section>
+						<h2>Yeoman and Bower</h2>
+
+					</section>
+					<section>
+						<h2>Grunt / Gulp</h2>
+
+					</section>
+					<section>
+						<h2>Jasmine, Karma and Protractor</h2>
+
 					</section>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<h2>The future, today!</h2>
+						<p class="orange">Let me <strong>inspire</strong> you</p>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					<section>
+						<h2>The Ionic Framework</h2>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					<section>
+						<h2>Material Design</h2>
 					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
+					<section>
+						<h2>Reactive UIs</h2>
 					</section>
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
 
 		</div>
