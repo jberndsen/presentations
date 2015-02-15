@@ -236,7 +236,7 @@
 					<section>
 						<h2>Controllers</h2>
 						<p class="orange">todo.js</p>
-						<pre><code data-trim>
+						<pre><code data-trim class="stretch">
 var app = angular.module("app", []);
 app.controller('TodoController', function ($scope) {
   $scope.todos = [
@@ -262,6 +262,7 @@ app.controller('TodoController', function ($scope) {
 					<section>
 						<h2>Controllers</h2>
 						<img src="img/concepts-databinding2.png" style="border: 0; background: none; box-shadow: none" />
+						<br /><i class="smaller">Image courtesy of the AngularJS team</i>
 					</section>
 
 					<section>
@@ -297,7 +298,7 @@ app.controller('TodoController', function ($scope) {
 					<section>
 						<h2>Services</h2>
 						<p class="orange">index.html</p>
-						<pre><code data-trim>
+						<pre><code data-trim class="stretch">
 &lt;div ng-controller="InvoiceController as invoice"&gt;
   &lt;div&gt;
     Quantity: &lt;input type="number" min="0" ng-model="invoice.qty"&gt;
@@ -339,10 +340,10 @@ app.controller('InvoiceController', function(currencyConverter) {
 					<section>
 						<h2>Services</h2>
 						<p class="orange">finance.js</p>
-						<pre><code data-trim>
+						<pre><code data-trim class="stretch">
 angular.module('finance', []).factory('currencyConverter',
   function() {
-		
+
   var currencies = ['USD', 'EUR', 'CNY'];
   var usdToForeignRates = {
     USD: 1,
@@ -364,25 +365,89 @@ angular.module('finance', []).factory('currencyConverter',
 
 					<section>
 						<img src="img/concepts-module-service.png" style="border: 0; background: none; box-shadow: none" />
+						<br /><i class="smaller">Image courtesy of the AngularJS team</i>
 					</section>
 
 					<section>
-						<h2>Directives: $repeat and filters</h2>
+						<h2>Wiring up a back-end</h2>
+						<p class="orange">Super simple with $http</p>
+						<pre><code data-trim class="stretch">
+angular.module('finance', [])
+  .factory('ibanService', function ($http, apiUrl) {
+
+  // return a promise because the http request will take a while
+  function convertBban (request) {
+    var promise = $http.post(apiUrl + '/Iban/ConvertIban', request)
+      .then(function(response) {
+        return response.data;
+      });
+
+    return promise;
+  };
+
+  // return the actual service
+  return {
+    convertBban: convertBban;
+  };
+});
+						</code></pre>
 					</section>
 
 					<section>
-						<h2>Custom directives!</h2>
-						<p>Form validation</p>
+						<h2>Custom directives</h2>
+						<p class="orange">Build your own reusable components!</p>
+						<pre><code data-trim>
+angular.module('app')
+  .directive('myCustomer', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'myCustomer.html'
+    }
+  });
+						</code></pre>
+
+						<pre><code data-trim>
+&lt;fieldset&gt;
+  &lt;legend&gt;Personal details&lt;/legend&gt;
+  &lt;label&gt;First name&lt;/label&gt; {{customer.firstName}}
+  &lt;label&gt;Last name&lt;/label&gt; {{customer.lastName}}
+&lt;/fieldset&gt;
+						</code></pre>
 					</section>
 
 					<section>
-						<h2>Communicating to a back-end</h2>
-						<p>Simple with $http</p>
+						<h2>Custom directives</h2>
+						<pre><code data-trim>
+angular.module('app')
+  .controller('SomeController', function($scope) {
+    $scope.customer = {
+      firstName: "Jeroen",
+      lastName: "Berndsen"
+    };
+  });
+						</code></pre>
+
+						<pre><code data-trim>
+&lt;div ng-controller=“SomeController”&gt;
+  &lt;my-customer&gt;
+&lt;/div&gt;
+						</code></pre>
 					</section>
 
 					<section>
 						<h2>Routing</h2>
-						<p>use it to build SPAs</p>
+						<p class="orange">Build full-fledged SPAs!</p>
+						<pre><code data-trim class="stretch">
+angular.module('app', [])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/home',  { templateUrl: 'home.html',
+                        controller: 'HomeController' })
+      .when('/about', { templateUrl: 'about.html',
+                        controller: 'AboutController' })
+      .otherwise( redirectTo: '/home' );
+  });
+						</code></pre>
 					</section>
 				</section>
 
