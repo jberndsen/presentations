@@ -52,9 +52,6 @@
 				<section data-background="img/jeroenberndsen.jpg">
 					<div style="text-align: left; float: left; width: 50%;">
 					<h2>Hello There!</h2>
-					<p>
-						<!-- some text about me? -->
-					</p>
 				</div>
 				</section>
 
@@ -101,50 +98,38 @@
 					</section>
 				</section>
 
-				<!-- HIER BEGINT ANGULAR INTRO -->
-				<!-- iets over dat ik vooral back-end heb beschreven, dit gaat over front-end-->
-				<!--
+				<!-- ANGULAR INTRO -->
 				<section>
-					<h2>The trend</h2>
-					<p>Applying industry-accepted design patterns and principles to the web paradigm</p>
-					<ul>
-						<li class="fragment">Seperation of concerns</li>
-						<li class="fragment">Modular design</li>
-						<li class="fragment">Testability</li>
-						<li class="fragment">A focus on quality because our dependency on our apps, mission critical, real life</li>
-					</ul>
+					<section>
+						<h2>What about front-end technologies?</h2>
+						<p class="orange">HTML is intended for static documents</p><!-- it limits our expressiveness -->
+						<p class="fragment">Current web apps are highly dynamic</p><!-- hardly adapted change -->
+						<p class="fragment">Webdev = tricking the browser into doing what we really want?</p>
+						<p class="fragment">DOM manipulation libraries (jQuery)</p><!-- to help with the missmatch between static/dynamic -->
+					</section>
+					<section>
+						<h2>This is madness!</h2>
+						<p class="orange">we are <strong>WAY</strong> too dependent on our web apps</p>
+						<!-- mission critical for companies -->
+						<!-- the very means of communication in our private lives -->
+					</section>
+					<section>
+						<h2>And we know how to do better</h2>
+						<p class="orange">Adapt design patterns and principles to front-end</p>
+						<p class="fragment">Decouple the front-end and back-end</p><!-- parallel development and reuse -->
+						<p class="fragment">Decouple presentation from app logic</p><!-- for testability -->
+					</section>
+					<section>
+						<h2>Enter AngularJS</h2>
+						<p class="orange">The superheroic MVW Javascript framework</p>
+						<p class="fragment">Extend HTML with reusable components</p>
+						<p class="fragment">Abstract from DOM manipulation</p>
+						<p class="fragment">Separate presentation from behaviour</p>
+						<p class="fragment">Testing as a first-class citizen</p>
+					</section>
 				</section>
 
-				<section>
-					<h2>The trend: focus!</h2>
-					<p>Do one job and do it well</p>
-					<p>Answering to ever increasing complex requirements</p>
-					<p>Allows for rapid development of new insights, since we no longer
-						build entire frameworks, we combine small things that fit well together.
-					</p>
-					<p class="fragment">So how does Angular fit in?</p>
-				</section>
-
-				<section>
-					<h2>AngularJS</h2>
-					<p>Apply the back-end trend to the front-end</p>
-
-				</section>
-
-				<section>
-					<h2>So what's the problem it's trying to solve?</h2>
-					<p>HTML is static: great for static documents</p>
-					<p>Modern web applications are not static, so HTML limits us in our expressiveness</p>
-					<p>Either we abstract away from it</p>
-				</section>
-
-				<section>
-					<h2>How does it solve it?</h2>
-					<p>Allows us to extend html, so we can build the things we need</p>
-					<p>Behaviour / view separation</p>
-				</section>
--->
-				<!-- HIER BEGINT TECHNISCHE STUK, CODE -->
+				<!-- CODE DEEP DIVE: data binding, templating directives, validation, routing, reusable components, DI -->
 				<section>
 					<section>
 						<div ng-app="app">
@@ -244,7 +229,7 @@
 					</section>
 					<section>
 						<h2>Embrace</h2>
-						<p class="orange">Full seperation between client and server</p>
+						<p class="orange">Full separation between client and server</p>
 						<p class="fragment">Component segegration (e.g. Authorization servers / microservices)</p>
 						<p class="fragment">Decouple from IIS (OWIN is default in vNext)</p>
 						<p class="fragment">Switch to cloud hosting on Azure (Worker roles)</p>
