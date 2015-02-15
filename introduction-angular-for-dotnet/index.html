@@ -215,23 +215,6 @@
 							angular.bootstrap(e3, ['app']);
 						});
 					</script>
-					<section>
-						<h2>Controllers</h2>
-						<p class="orange">index.html</p>
-						<pre><code data-trim>
-&lt;div ng-controller="TodoController"&gt;
-  &lt;i&gt;{{remaining()}} of {{todos.length}} remaining&lt;/i&gt;&lt;br /&gt;
-    &lt;div ng-repeat="todo in todos"&gt;
-      &lt;input type="checkbox" ng-model="todo.done"&gt;
-      &lt;span class="done-{{todo.done}}"&gt;{{todo.text}}&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;form ng-submit="addTodo()"&gt;
-    &lt;input type="text" ng-model="todoText"  size="15"&gt;
-    &lt;input type="submit" value="add"&gt;
-  &lt;/form&gt;
-&lt;/div&gt;
-						</code></pre>
-					</section>
 
 					<section>
 						<h2>Controllers</h2>
@@ -256,6 +239,24 @@ app.controller('TodoController', function ($scope) {
     return count;
   };
 });
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Controllers</h2>
+						<p class="orange">index.html</p>
+						<pre><code data-trim>
+&lt;div ng-controller="TodoController"&gt;
+	&lt;i&gt;{{remaining()}} of {{todos.length}} remaining&lt;/i&gt;&lt;br /&gt;
+		&lt;div ng-repeat="todo in todos"&gt;
+			&lt;input type="checkbox" ng-model="todo.done"&gt;
+			&lt;span class="done-{{todo.done}}"&gt;{{todo.text}}&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;form ng-submit="addTodo()"&gt;
+		&lt;input type="text" ng-model="todoText"  size="15"&gt;
+		&lt;input type="submit" value="add"&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
 						</code></pre>
 					</section>
 
@@ -453,29 +454,38 @@ angular.module('app', [])
 
 				<section>
 					<section>
-						<h2>Tools</h2>
-						<p class="orange">Angular has lots of friends</p>
-						<p>Plays nice with all those other neat libraries</p>
+						<h2>Tooling</h2>
+						<p class="orange">Angular has lots of friends!</p>
 					</section>
 					<section>
-						<h2>Code editing</h2>
-						<p class="orange">Visual studio rocks!</p>
-					</section>
-					<section>
-						<h2>Node.js and NPM</h2>
-						<p>Integration with Visual Studio in vNext</p>
-					</section>
-					<section>
-						<h2>Yeoman and Bower</h2>
-
+						<h2>NodeJS</h2>
+						<p class="orange">JavaScript runtime environment</p>
+						<p class="fragment">Comes with the package manager NPM</p>
+						<p class="fragment">Full integration with Visual Studio in vNext</p>
+						<p class="fragment">Get it at <a href="www.nodejs.org">www.nodejs.org</a></p>
 					</section>
 					<section>
 						<h2>Grunt / Gulp</h2>
-
+						<p class="orange">Because who likes doing mundane work?</p>
+						<p class="fragment">The Javascript task runner</p>
+						<p class="fragment">In one word: automation</p>
+						<p class="fragment">Minification, compilation, unit testing, linting, etc.</p>
+						<blockquote class="fragment">> npm install -g grunt</blockquote>
+					</section>
+					<section>
+						<h2>Yeoman and Bower</h2>
+						<p class="orange">Scaffolding tool for modern web apps</p>
+						<p class="fragment">Kickstart your project using generators</p>
+						<p class="fragment">Scaffold boilerplate code, grunt tasks and bower dependencies</p>
+						<p class="fragment">Use Bower for in-project dependencies</p>
+						<blockquote class="fragment">> npm install -g yo</blockquote>
 					</section>
 					<section>
 						<h2>Jasmine, Karma and Protractor</h2>
-
+						<p class="orange">Testing is important! You should do it!</p>
+						<p class="fragment"><a href="http://jasmine.github.io/">Jasmine</a> is a behavior-driven test framework</p>
+						<p class="fragment"><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> automates running the test suites in all browsers</p>
+						<p class="fragment"><a href="http://angular.github.io/protractor/#/">Protractor</a> offers full E2E testing for your angular apps</p>
 					</section>
 				</section>
 
