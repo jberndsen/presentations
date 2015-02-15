@@ -247,15 +247,15 @@ app.controller('TodoController', function ($scope) {
 						<p class="orange">index.html</p>
 						<pre><code data-trim>
 &lt;div ng-controller="TodoController"&gt;
-	&lt;i&gt;{{remaining()}} of {{todos.length}} remaining&lt;/i&gt;&lt;br /&gt;
-		&lt;div ng-repeat="todo in todos"&gt;
-			&lt;input type="checkbox" ng-model="todo.done"&gt;
-			&lt;span class="done-{{todo.done}}"&gt;{{todo.text}}&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;form ng-submit="addTodo()"&gt;
-		&lt;input type="text" ng-model="todoText"  size="15"&gt;
-		&lt;input type="submit" value="add"&gt;
-	&lt;/form&gt;
+  &lt;i&gt;{{remaining()}} of {{todos.length}} remaining&lt;/i&gt;&lt;br /&gt;
+    &lt;div ng-repeat="todo in todos"&gt;
+      &lt;input type="checkbox" ng-model="todo.done"&gt;
+      &lt;span class="done-{{todo.done}}"&gt;{{todo.text}}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;form ng-submit="addTodo()"&gt;
+    &lt;input type="text" ng-model="todoText"  size="15"&gt;
+    &lt;input type="submit" value="add"&gt;
+  &lt;/form&gt;
 &lt;/div&gt;
 						</code></pre>
 					</section>
