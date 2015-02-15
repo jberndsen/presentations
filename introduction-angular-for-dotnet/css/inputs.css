@@ -11,6 +11,36 @@ input[type=text]:focus {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 
+input[type=checkbox] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+
+input[type=submit] {
+  display: inline-block;
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 43px;
+  color: #fff;
+}
+
 .orange {
   color: orange;
+}
+
+.smaller {
+  font-size: 0.3em;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
 }

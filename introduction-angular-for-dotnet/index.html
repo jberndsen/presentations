@@ -22,6 +22,10 @@
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<!-- angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+		<script src="app.js"></script>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -132,35 +136,143 @@
 				<!-- CODE DEEP DIVE: data binding, templating directives, validation, routing, reusable components, DI -->
 				<section>
 					<section>
-						<div ng-app="app">
-						<h2>Data binding</h2>
+						<div id="databinding1">
+							<h2>Data binding</h2>
 							<p>Hello, {{name}}!</p>
 							<input type="text" ng-model="name">
 						</div>
 						<br />
-							<pre><code data-trim>
+
+						<pre><code data-trim>
 &lt;div ng-app="app"&gt;
    &lt;h2&gt;Data binding&lt;/h2&gt;
    &lt;p&gt;Hello, {{name}}!&lt;/p&gt;
    &lt;input type=&quot;text&quot; ng-model=&quot;name&quot;&gt;
 &lt;/div&gt;
-</code></pre>
+					</code></pre>
+					</section>
+					<script type="text/javascript">
+					  var e = document.getElementById("databinding1");
+						angular.element(e).ready(function() {
+							angular.bootstrap(e, ['app']);
+						});
+					</script>
+
+					<section>
+							<div id="databinding2" ng-init="price=1;quantity=1;">
+								<h2>Data binding</h2> <!-- templates / views / compiler -->
+								<input type="text" ng-model="price"><br />
+								<input type="text" ng-model="quantity"><br />
+								<b>Total: </b>{{price * quantity | currency}}
+							</div>
+							<br />
+
+							<pre><code data-trim>
+	&lt;div ng-app="app" ng-init="price=1;quantity=1;"&gt;
+		&lt;h2&gt;Data binding&lt;/h2&gt;
+		&lt;input type=&quot;text&quot; ng-model=&quot;price&quot;&gt;&lt;br /&gt;
+		&lt;input type=&quot;text&quot; ng-model=&quot;quantity&quot;&gt;&lt;br /&gt;
+		&lt;b&gt;Total: &lt;/b&gt;{{price * quantity | currency}}
+	&lt;/div&gt;
+							</code></pre>
+					</section>
+					<script type="text/javascript">
+						var e2 = document.getElementById("databinding2");
+						angular.element(e2).ready(function() {
+							angular.bootstrap(e2, ['app']);
+						});
+					</script>
+
+					<section>
+						<h2>Data binding</h2>
+						<img src="img/concepts-databinding1.png" style="border: 0; background: none; box-shadow: none" />
+						<br />
+						<i class="smaller">Image courtesy of the AngularJS team</i>
 					</section>
 
 					<section>
 						<h2>Controllers</h2>
-						<p>Todo example here</p>
-						<p>plain javascript, no proprietary objects</p>
-						<p>so we can use all the other javascript goodness</p>
+						<div id="controllers1">
+							<div ng-controller="TodoController">
+								<p class="orange">{{remaining()}} of {{todos.length}} remaining</p><br />
+									<div ng-repeat="todo in todos">
+										<input type="checkbox" ng-model="todo.done">
+										<span class="done-{{todo.done}}">{{todo.text}}</span>
+									</div>
+								<form ng-submit="addTodo()">
+									<input type="text" ng-model="todoText"  size="15">
+									<input type="submit" value="add">
+								</form>
+							</div
+						</div>
+					</section>
+					<script type="text/javascript">
+						var e3 = document.getElementById("controllers1");
+						angular.element(e3).ready(function() {
+							angular.bootstrap(e3, ['app']);
+						});
+					</script>
+					<section>
+						<h2>Controllers</h2>
+						<p class="orange">index.html</p>
+						<pre><code data-trim>
+&lt;div ng-controller="TodoController"&gt;
+  &lt;p"&gt;{{remaining()}} of {{todos.length}} remaining&lt;/p&gt;&lt;br /&gt;
+    &lt;div ng-repeat="todo in todos"&gt;
+      &lt;input type="checkbox" ng-model="todo.done"&gt;
+      &lt;span class="done-{{todo.done}}"&gt;{{todo.text}}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;form ng-submit="addTodo()"&gt;
+    &lt;input type="text" ng-model="todoText"  size="15"&gt;
+    &lt;input type="submit" value="add"&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+						</code></pre>
 					</section>
 
 					<section>
-						<h2>$repeat and filters</h2>
+						<h2>Controllers</h2>
+						<p class="orange">todo.js</p>
+						<pre><code data-trim>
+var app = angular.module("app", []);
+app.controller('TodoController', ['$scope', function ($scope) {
+  $scope.todos = [
+    {text:'learn angular', done:true},
+    {text:'build an angular app', done:false}];
+
+  $scope.addTodo = function() {
+    $scope.todos.push({text:$scope.todoText, done:false});
+    $scope.todoText = '';
+  };
+
+  $scope.remaining = function() {
+    var count = 0;
+      angular.forEach($scope.todos, function(todo) {
+      count += todo.done ? 0 : 1;
+    });
+    return count;
+  };
+}]);
+						</code></pre>
 					</section>
 
 					<section>
-						<h2>Routing</h2>
-						<p>use it to build SPAs</p>
+						<h2>Controllers</h2>
+						<img src="img/concepts-databinding2.png" style="border: 0; background: none; box-shadow: none" />
+					</section>
+
+					<section>
+						<h2>Services</h2>
+						<p>Dependency injection: declare what you need</p>
+					</section>
+
+					<section>
+						<h2>Directives: $repeat and filters</h2>
+					</section>
+
+					<section>
+						<h2>Custom directives!</h2>
+						<p>Form validation</p>
 					</section>
 
 					<section>
@@ -169,14 +281,9 @@
 					</section>
 
 					<section>
-						<h2>Custom services</h2>
-						<p>Dependency injection: declare what you need</p>
-					</section>
-
-					<section>
-						<h2>Custom directives!</h2>
-						<p>Form validation</p>
-					</section>
+						<h2>Routing</h2>
+						<p>use it to build SPAs</p>
+					</section>				
 				</section>
 
 				<section>
@@ -268,9 +375,6 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
-		<script src="app.js"></script>
-
 		<script>
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
