@@ -62,7 +62,17 @@ select {
 }
 
 .orange {
+  color: #E6BC16;
+}
+
+.blue {
+  color: #3399FF;
+}
+
+.big {
   color: orange;
+  font-size: 3em !important;
+  font-weight: bold;
 }
 
 .smaller {

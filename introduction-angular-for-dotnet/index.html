@@ -77,28 +77,28 @@
 					<section>
 						<h2>Users request and consume static information (<strong>1990</strong>)</h2>
 						<p class="orange">The world wide web is invented</p>
-						<p class="fragment">Simple HTML, some CSS</p>
-						<p class="fragment">JavaScript became standardized in 1996</p>
+						<p class="fragment roll-in">Simple HTML, some CSS</p>
+						<p class="fragment roll-in">JavaScript became standardized in 1996</p>
 					</section>
 					<section>
 						<h2>Web 2.0: Users start producing information (<strong>2002</strong>)</h2>
 						<p class="orange">ASP.NET introduced</p>
-						<p class="fragment">User Controls</p>
-						<p class="fragment">Code-behind files</p>
-						<small class="fragment">remember page life cycles?</small>
+						<p class="fragment roll-in">User Controls</p>
+						<p class="fragment roll-in">Code-behind files</p>
+						<small class="fragment roll-in">remember page life cycles?</small>
 					</section>
 					<section>
 							<h2>The iPhone: transition to mobile-first (<strong>2007</strong>)</h2>
 							<p class="orange">.NET 3.0 introduced in late 2006</p>
-							<p class="fragment">WPF, WCF, WWF, Windows Cardspace</p>
-							<p class="fragment">.NET 3.5 late 2007, introducing LINQ and EF</p>
+							<p class="fragment roll-in">WPF, WCF, WWF, Windows Cardspace</p>
+							<p class="fragment roll-in">.NET 3.5 late 2007, introducing LINQ and EF</p>
 					</section>
 					<section>
 						<h2>Cloud based reactive systems and big data (<strong>2010 - now</strong>)</h2>
 						<p class="orange">.NET 4.0 introduced in 2010</p>
-						<p class="fragment">ASP.NET MVC</p>
-						<p class="fragment">Parallel LINQ, Task Parallel Library</p>
-						<p class="fragment">Cloud architecture patterns: CQRS, Event sourcing, etc.</p>
+						<p class="fragment roll-in">ASP.NET MVC</p>
+						<p class="fragment roll-in">Parallel LINQ, Task Parallel Library</p>
+						<p class="fragment roll-in">Cloud architecture patterns: CQRS, Event sourcing, etc.</p>
 					</section>
 				</section>
 
@@ -107,9 +107,9 @@
 					<section>
 						<h2>What about front-end technologies?</h2>
 						<p class="orange">HTML is intended for static documents</p><!-- it limits our expressiveness -->
-						<p class="fragment">Current web apps are highly dynamic</p><!-- hardly adapted change -->
-						<p class="fragment">Webdev = tricking the browser into doing what we really want?</p>
-						<p class="fragment">DOM manipulation libraries (jQuery)</p><!-- to help with the missmatch between static/dynamic -->
+						<p class="fragment roll-in">Current web apps are highly dynamic</p><!-- hardly adapted change -->
+						<p class="fragment roll-in">Webdev = tricking the browser into doing what we really want?</p>
+						<p class="fragment roll-in">DOM manipulation libraries (jQuery)</p><!-- to help with the missmatch between static/dynamic -->
 					</section>
 					<section>
 						<h2>This is madness!</h2>
@@ -120,21 +120,44 @@
 					<section>
 						<h2>And we know how to do better</h2>
 						<p class="orange">Adapt design patterns and principles to front-end</p>
-						<p class="fragment">Decouple the front-end and back-end</p><!-- parallel development and reuse -->
-						<p class="fragment">Decouple presentation from app logic</p><!-- for testability -->
+						<p class="fragment roll-in">Decouple the front-end and back-end</p><!-- parallel development and reuse -->
+						<p class="fragment roll-in">Decouple presentation from app logic</p><!-- for testability -->
 					</section>
 					<section>
-						<h2>Enter AngularJS</h2>
+						<h2>AngularJS</h2>
+						<p class="big">It brings quality</h1>
+					</section>
+					<section>
+						<h2>AngularJS</h2>
+						<p class="big">It's fast!</h1>
+					</section>
+					<section>
+						<h2>AngularJS</h2>
+						<p class="big">It's free!</h1>
+					</section>
+					<section>
+						<h2>AngularJS</h2>
+						<p class="orange">Return the things to where they belong</p>
+						<p class="fragment roll-in">Use <span class="blue">HTML</span> to declaratively describe UI</p>
+						<p class="fragment roll-in">Use <span class="blue">CSS</span> for styling and animation</p>
+						<p class="fragment roll-in">Use <span class="blue">Javascript</span> to add behaviour</p>
+					</section>
+					<section>
+						<h2>AngularJS</h2>
 						<p class="orange">The superheroic MVW Javascript framework</p>
-						<p class="fragment">Extend HTML with reusable components</p>
-						<p class="fragment">Abstract from DOM manipulation</p>
-						<p class="fragment">Separate presentation from behaviour</p>
-						<p class="fragment">Testing as a first-class citizen</p>
+						<p class="fragment roll-in">Extend HTML with reusable components</p>
+						<p class="fragment roll-in">Abstract from DOM manipulation</p>
+						<p class="fragment roll-in">Separate presentation from behaviour</p>
+						<p class="fragment roll-in">Testing as a first-class citizen</p>
 					</section>
 				</section>
 
 				<!-- CODE DEEP DIVE: data binding, templating directives, validation, routing, reusable components, DI -->
 				<section>
+					<section>
+						<h2>Model View Control (<a href="http://www.essenceandartifact.com/2012/12/the-essence-of-mvc.html">MVC</a>)</h2>
+						<img src="img/mvc.png" style="border: 0; background: none; box-shadow: none" />
+					</section>
 					<section>
 						<div id="databinding1">
 							<h2>Data binding</h2>
@@ -454,38 +477,41 @@ angular.module('app', [])
 
 				<section>
 					<section>
-						<h2>Tooling</h2>
+						<h2>Eco-system and tooling</h2>
 						<p class="orange">Angular has lots of friends!</p>
 					</section>
 					<section>
+						<h2>The community</h2>
+						<p class="orange">Quite possibly the best part of it all</p>
+					<section>
 						<h2>NodeJS</h2>
 						<p class="orange">JavaScript runtime environment</p>
-						<p class="fragment">Comes with the package manager NPM</p>
-						<p class="fragment">Full integration with Visual Studio in vNext</p>
-						<p class="fragment">Get it at <a href="www.nodejs.org">www.nodejs.org</a></p>
+						<p class="fragment roll-in">Comes with the package manager NPM</p>
+						<p class="fragment roll-in">Full integration with Visual Studio in vNext</p>
+						<p class="fragment roll-in">Get it at <a href="www.nodejs.org">www.nodejs.org</a></p>
 					</section>
 					<section>
 						<h2>Grunt / Gulp</h2>
 						<p class="orange">Because who likes doing mundane work?</p>
-						<p class="fragment">The Javascript task runner</p>
-						<p class="fragment">In one word: automation</p>
-						<p class="fragment">Minification, compilation, unit testing, linting, etc.</p>
-						<blockquote class="fragment">> npm install -g grunt</blockquote>
+						<p class="fragment roll-in">The Javascript task runner</p>
+						<p class="fragment roll-in">In one word: automation</p>
+						<p class="fragment roll-in">Minification, compilation, unit testing, linting, etc.</p>
+						<blockquote class="fragment roll-in">> npm install -g grunt</blockquote>
 					</section>
 					<section>
 						<h2>Yeoman and Bower</h2>
 						<p class="orange">Scaffolding tool for modern web apps</p>
-						<p class="fragment">Kickstart your project using generators</p>
-						<p class="fragment">Scaffold boilerplate code, grunt tasks and bower dependencies</p>
-						<p class="fragment">Use Bower for in-project dependencies</p>
-						<blockquote class="fragment">> npm install -g yo</blockquote>
+						<p class="fragment roll-in">Kickstart your project using generators</p>
+						<p class="fragment roll-in">Scaffold boilerplate code, grunt tasks and bower dependencies</p>
+						<p class="fragment roll-in">Use Bower for in-project dependencies</p>
+						<blockquote class="fragment roll-in">> npm install -g yo</blockquote>
 					</section>
 					<section>
 						<h2>Jasmine, Karma and Protractor</h2>
 						<p class="orange">Testing is important! You should do it!</p>
-						<p class="fragment"><a href="http://jasmine.github.io/">Jasmine</a> is a behavior-driven test framework</p>
-						<p class="fragment"><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> automates running the test suites in all browsers</p>
-						<p class="fragment"><a href="http://angular.github.io/protractor/#/">Protractor</a> offers full E2E testing for your angular apps</p>
+						<p class="fragment roll-in"><a href="http://jasmine.github.io/">Jasmine</a> is a behavior-driven test framework</p>
+						<p class="fragment roll-in"><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> automates running the test suites in all browsers</p>
+						<p class="fragment roll-in"><a href="http://angular.github.io/protractor/#/">Protractor</a> offers full E2E testing for your angular apps</p>
 					</section>
 				</section>
 
@@ -498,31 +524,31 @@ angular.module('app', [])
 					<section>
 						<h2>Start small</h2>
 						<p class="orange">Integrate in sections of your current project</p>
-						<p class="fragment">Just add a reference to angular.min.js</p>
-						<p class="fragment">Add client-side form validation</p>
-						<p class="fragment">Smooth transitions, filtering, sorting, etc.</p>
-						<p class="fragment">Client-side routing</p>
+						<p class="fragment roll-in">Just add a reference to angular.min.js</p>
+						<p class="fragment roll-in">Add client-side form validation</p>
+						<p class="fragment roll-in">Smooth transitions, filtering, sorting, etc.</p>
+						<p class="fragment roll-in">Client-side routing</p>
 					</section>
 					<section>
 						<h2>Adapt</h2>
 						<p class="orange">Wire up a back-end</p>
-						<p class="fragment">1: Map the UI router to MVC routes</p>
-						<p class="fragment">2: Migrate to REST using Web API</p>
+						<p class="fragment roll-in">1: Map the UI router to MVC routes</p>
+						<p class="fragment roll-in">2: Migrate to REST using Web API</p>
 					</section>
 					<section>
 						<h2>Embrace</h2>
 						<p class="orange">Full separation between client and server</p>
-						<p class="fragment">Component segegration (e.g. Authorization servers / microservices)</p>
-						<p class="fragment">Decouple from IIS (OWIN is default in vNext)</p>
-						<p class="fragment">Switch to cloud hosting on Azure (Worker roles)</p>
+						<p class="fragment roll-in">Component segegration (e.g. Authorization servers / microservices)</p>
+						<p class="fragment roll-in">Decouple from IIS (OWIN is default in vNext)</p>
+						<p class="fragment roll-in">Switch to cloud hosting on Azure (Worker roles)</p>
 					</section>
 					<section>
 						<h2>Conquer</h2>
 						<p class="orange">Scale out! You really rock now!</p>
-						<p class="fragment">Reactive event-driven systems</p>
-						<p class="fragment">High performance, high availability, high everything</p>
-						<p class="fragment">Enterprise scale big data</p>
-						<p class="fragment">Web Sockets (SignalR)</p>
+						<p class="fragment roll-in">Reactive event-driven systems</p>
+						<p class="fragment roll-in">High performance, high availability, high everything</p>
+						<p class="fragment roll-in">Enterprise scale big data</p>
+						<p class="fragment roll-in">Web Sockets (SignalR)</p>
 					</section>
 				</section>
 
