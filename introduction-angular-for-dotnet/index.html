@@ -64,6 +64,7 @@
 						<ul>
 							<li class="fragment roll-in">History of the web and ASP.NET</li>
 							<li class="fragment roll-in">AngularJS</li>
+							<li class="fragment roll-in">Eco-system and tooling</li>
 							<li class="fragment roll-in">.NET integration</li>
 							<li class="fragment roll-in">The future, today!</li>
 						</ul>
@@ -108,7 +109,6 @@
 						<h2>What about front-end technologies?</h2>
 						<p class="orange">HTML is intended for static documents</p><!-- it limits our expressiveness -->
 						<p class="fragment roll-in">Current web apps are highly dynamic</p><!-- hardly adapted change -->
-						<p class="fragment roll-in">Webdev = tricking the browser into doing what we really want?</p>
 						<p class="fragment roll-in">DOM manipulation libraries (jQuery)</p><!-- to help with the missmatch between static/dynamic -->
 					</section>
 					<section>
@@ -137,6 +137,10 @@
 					</section>
 					<section>
 						<h2>AngularJS</h2>
+						<p class="big">It's fun!</h1>
+					</section>
+					<section>
+						<h2>AngularJS</h2>
 						<p class="orange">Return the things to where they belong</p>
 						<p class="fragment roll-in">Use <span class="blue">HTML</span> to declaratively describe UI</p>
 						<p class="fragment roll-in">Use <span class="blue">CSS</span> for styling and animation</p>
@@ -150,6 +154,11 @@
 						<p class="fragment roll-in">Separate presentation from behaviour</p>
 						<p class="fragment roll-in">Testing as a first-class citizen</p>
 					</section>
+					<section>
+						<h2>AngularJS</h2>
+						<p><strong class="orange">Beginner to intermediate?</strong> Angular is opinionated and will save you from the spaghetti code monster.</p>
+						<p><strong class="orange">More advanced?</strong> Create complex web apps with unit-testing in mind.</p>
+					</section>
 				</section>
 
 				<!-- CODE DEEP DIVE: data binding, templating directives, validation, routing, reusable components, DI -->
@@ -157,6 +166,22 @@
 					<section>
 						<h2>Model View Control (<a href="http://www.essenceandartifact.com/2012/12/the-essence-of-mvc.html">MVC</a>)</h2>
 						<img src="img/mvc.png" style="border: 0; background: none; box-shadow: none" />
+					</section>
+					<section>
+						<h2>Data binding</h2>
+						<pre><code data-trim>
+&lt;div id=“message”&gt;&lt;/div&gt;
+document.getElementById(“message”).textContent = hello;
+						</code></pre>
+
+						<pre><code data-trim>
+&lt;div id=“message”&gt;&lt;/div&gt;
+$(“message”).text(hello);
+						</code></pre>
+
+						<pre><code data-trim>
+&lt;div&gt;{{hello}}&lt;/div&gt;
+						</code></pre>
 					</section>
 					<section>
 						<div id="databinding1">
@@ -528,7 +553,6 @@ angular.module('app', [])
 						<p class="fragment roll-in"><a href="http://jasmine.github.io/">Jasmine</a> is a behavior-driven test framework</p>
 						<p class="fragment roll-in"><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> automates running the test suites in all browsers</p>
 						<p class="fragment roll-in"><a href="http://angular.github.io/protractor/#/">Protractor</a> offers full E2E testing for your angular apps</p>
-
 					</section>
 				</section>
 
@@ -561,7 +585,7 @@ angular.module('app', [])
 					</section>
 					<section>
 						<h2>Conquer</h2>
-						<p class="orange">Scale out! You really rock now!</p>
+						<p class="orange">Scale out! You rock!</p>
 						<p class="fragment roll-in">Reactive event-driven systems</p>
 						<p class="fragment roll-in">High performance, high availability, high everything</p>
 						<p class="fragment roll-in">Enterprise scale big data</p>
@@ -589,8 +613,10 @@ angular.module('app', [])
 				</section>
 
 				<section>
-					<h2>Thank you!</h2>
-					<p>Find this presentation at <a href="http://presentations.jberndsen.nl/introduction-angular-for-dotnet/">http://presentations.jberndsen.nl/introduction-angular-for-dotnet/</a></p>
+					<h2>Thank you<span class="orange">!</span></h2>
+					<p>Review this presentation at <a href="http://presentations.jberndsen.nl/introduction-angular-for-dotnet/">http://presentations.jberndsen.nl/introduction-angular-for-dotnet/</a></p>
+
+					<p>Reach <span class="orange">me</span> at <a href="mailto:jeroen.berndsen@trivento.nl">jeroen.berndsen@trivento.nl</a>
 				</section>
 			</div>
 
