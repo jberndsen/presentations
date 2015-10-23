@@ -1,0 +1,19 @@
+Microservices in Microsoft Land presentatie:
+
+20 mins aspnet 5:
+	- wat is aspnet? wat is .net? (Identity, Entity Framework) (Opensource)
+	- platform plaatje met runtime, dnx. runs anywhere.
+	- waarom is aspnet relevant voor microservices?
+	- begin demo apple met ‘yo aspnet’, kijk of ie direct git doet, anders git init.
+	- 2 regels code typen met VSCode
+	
+
+20 mins Azure:
+	- wat is azure? IaaS / PaaS
+	- CI/CD demo-tje met onze aspnet app: CI via lokale git
+	- Laten zien verschillende platformen: docker, ubuntu, windows en web apps
+	- laten zien aanwezige apps: mongo, sql server, data analyse stuff
+	- Azure Service Fabric: Microservices op Azure. 
+		- actor model
+		- reliable state
+		- self healing, al die stoere dingen van “dat ene” plaatje
