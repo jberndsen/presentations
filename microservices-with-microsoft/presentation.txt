@@ -1,19 +1,43 @@
+MAX MAX MAX 40 MINUTEN
+
 Microservices in Microsoft Land presentatie:
 
-20 mins aspnet 5:
-	- wat is aspnet? wat is .net? (Identity, Entity Framework) (Opensource)
-	- platform plaatje met runtime, dnx. runs anywhere.
-	- waarom is aspnet relevant voor microservices?
-	- begin demo apple met ‘yo aspnet’, kijk of ie direct git doet, anders git init.
+10 mins aspnet 5:
+	- kort iets toevoegen over Entity Framework, Identity, etc?
+	- begin demo apple met ‘yo aspnet’
 	- 2 regels code typen met VSCode
+	- daarin ook een git repo initializen
 	
-
-20 mins Azure:
-	- wat is azure? IaaS / PaaS
-	- CI/CD demo-tje met onze aspnet app: CI via lokale git
+10 mins Azure:
+	- Azure Active Directory
 	- Laten zien verschillende platformen: docker, ubuntu, windows en web apps
 	- laten zien aanwezige apps: mongo, sql server, data analyse stuff
-	- Azure Service Fabric: Microservices op Azure. 
+
+
+https://azure.microsoft.com/nl-nl/overview/what-is-azure/
+
+https://azure.microsoft.com/nl-nl/overview/choose-azure-opensource/
+
+10 mins Deployment and monitoring:
+	- HDInsight
+	- Kan ik snel en eenvoudig bv. een NewRelic demo-tje bedenken?
+		- Snel hosten in Azure door aanmaken site, continuous deployment via local git, en pushen demo appje
+		- Uitvinden / toevoegen telemetry
+		
+10 mins Azure Service Fabric: Microservices op Azure. 
 		- actor model
 		- reliable state
 		- self healing, al die stoere dingen van “dat ene” plaatje
+		
+	http://www.infoworld.com/article/2911706/cloud-computing/new-azure-paas-aims-to-make-microsoft-the-microservices-maestro.html
+	
+	https://azure.microsoft.com/en-us/blog/announcing-azure-service-fabric-reducing-complexity-in-a-hyper-scale-world/
+	
+		
+
+		
+Conclusie - Waarom is ASPNET 5 zo geschikt voor microservices? 
+Conclusie - Waarom is Azure zo geschikt voor microservices?
+		
+		
+		

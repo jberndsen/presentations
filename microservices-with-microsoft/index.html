@@ -1,52 +1,53 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>Jeroen Berndsen: Building Microservices with Microsoft</title>
+	<title>Jeroen Berndsen: Building Microservices with Microsoft</title>
 
-		<meta name="description" content="Presentation: Building Microservices with Microsoft">
-		<meta name="author" content="Jeroen Berndsen">
+	<meta name="description" content="Presentation: Building Microservices with Microsoft">
+	<meta name="author" content="Jeroen Berndsen">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="css/style.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	</script>
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
+<body>
+	<div class="reveal">
+		<div class="slides">
 
-				<!-- INTRODUCTIE -->
-				<section>
-					<h3>Building Microservices with Microsoft</h3>
-					<p>
-						<small>a presentation by <a href="http://jberndsen.nl">Jeroen Berndsen</a></small>
-					</p>
-				</section>
+			<!-- INTRODUCTIE -->
+			<section>
+				<h3>Building Microservices with Microsoft</h3>
+				<p>
+					<small>a presentation by <a href="http://jberndsen.nl">Jeroen Berndsen</a></small>
+				</p>
+			</section>
 
+			<!--
 				<section data-background="img/jeroenberndsen.jpg">
 					<div style="text-align: left; float: left; width: 50%;">
 						<h2>Hello There!</h2>
@@ -54,28 +55,245 @@
 						<p class="fragment">Software architect at Trivento</p>
 					</div>
 				</section>
+				-->
 
+			<section>
+				<h2>Topics</h2>
+				<ul>
+					<li class="fragment roll-in">.NET and ASP.NET 5</li>
+					<li class="fragment roll-in">Introduction to Microsoft Azure</li>
+					<li class="fragment roll-in">Presenting Azure Service Fabric</li>
+				</ul>
+			</section>
+
+			<!-- .NET Framework -->
+			<section>
 				<section>
-					<h2>Topics</h2>
-						<ul>
-							<li class="fragment roll-in">ASP.NET 5</li>
-							<li class="fragment roll-in">Azure</li>
-						</ul>
+					<h2>The .NET Framework</h2>
+					<ul>
+						<li class="fragment roll-in">Single framework, introduced in 2002</li>
+						<li class="fragment roll-in">Quickly followed by .NET Compact Framework</li>
+						<li class="fragment roll-in">And again by Silverlight, Windows phone, Windows store, ...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>A set of verticals</h2>
+					<img src="img/netverticals.png"></img>
+				</section>
+				<section>
+					<h2>A set of verticals</h2>
+					<ul>
+						<li class="fragment roll-in">Specialized features that are highly optimized for your vertical</li>
+						<li class="fragment roll-in">Verticals were owned and maintained by different teams</li>
+						<li class="fragment roll-in">Targetting multiple verticals required multiple projects and linked files</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Portable Class Libraries (PCL)</h2>
+					<ul>
+						<li class="fragment roll-in">Unifies verticals based on API shape (Contracts)</li>
+						<li class="fragment roll-in">Enables creation of libraries that run on different verticals</li>
+						<li class="fragment roll-in">Drives convergence between verticals</li>
+						<li class="fragment roll-in">But APIs are only portable when framework implementation is moved forward across all verticals</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Framework deployment</h2>
+					<ul>
+						<li class="fragment roll-in">Machine-wide, centralized servicing, reduced disk space, etc.</li>
+						<li class="fragment roll-in">Depending on a recently released framework requires machine updates</li>
+						<li class="fragment roll-in">Not feasibly for web developers (IT operations says NO)</li>
+						<li class="fragment roll-in">Impossible for mobile developers</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- .NET Core -->
+			<section>
+				<section>
+					<h2>.NET Core</h2>
+					<img src="img/netcore.png"></img>
+				</section>
+				<section>
+					<h2>.NET Core Components</h2>
+					<ul>
+						<li class="fragment roll-in">GC, Core Language Runtime, Just-in-time compiler</li>
+						<li class="fragment roll-in">Base Class Libraries (BCL), but without framework dependencies, reduced footprint</li>
+						<li class="fragment roll-in">Entirely shipped as a NuGet package</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What this means</h2>
+					<ul>
+						<li class="fragment roll-in">Deploys along with your app, no machine dependency</li>
+						<li class="fragment roll-in">Side-by-side on the same machine</li>
+						<li class="fragment roll-in">Optimized for agile delivery through NuGet</li>
+						<li class="fragment roll-in"><span class="orange">Open sourced</span>, with support for Windows, <span class="orange">Linux</span> and <span class="orange">Mac OS X</span></li>
+					</ul>
 				</section>
 
+			<!-- ASP.NET 5 -->
 				<section>
-					<h2>Thank you<span class="orange">!</span></h2>
-					<p>Review this presentation at <a href="http://presentations.jberndsen.nl/microservices-with-microsoft/">http://presentations.jberndsen.nl/microservices-with-microsoft/</a></p>
-
-					<p>Reach <span class="orange">me</span> at <a href="mailto:jeroen.berndsen@trivento.nl">jeroen.berndsen@trivento.nl</a>
+					<h2>ASP.NET 5</h2>
+					<img src="img/stack.png"></img>
 				</section>
-			</div>
+				<section>
+					<h2>ASP.NET 5 and the modern web</h2>
+					<ul>
+						<li>Totally modular</li>
+						<li>Seamless transition from on-premises to cloud</li>
+						<li>Open source with contributions</li>
+						<li>Fast</li>
+						<li>Faster Development cycle</li>
+						<li>Choose your editor and tools</li>
+						<li>Cross-platform</li>
+					</ul>
+				</section>
+				<section>
+					<h2>ASP.NET on .NET Framework 5</h2>
+					<img src="img/asponnet.png"></img>
+				</section>
+				<section>
+					<h2>.NET Core technology stack</h2>
+					<img src="img/techstack.png"></img>
+				</section>
+			</section>
+
+			<!-- Azure -->
+			<section>
+				<section>
+					<h2>Microsoft Azure</h2>
+					<ul>
+						<li class="fragment roll-in">Infrastructure as a service, Platform as a service</li>
+						<li class="fragment roll-in">Hybrid cloud with Azure Stack</li>
+						<!-- let's you run the Azure stack on-premises -->
+						<li class="fragment roll-in">Pay for what you use, pay-per-minute model</li>
+						<li class="fragment roll-in">Currently 22 regions world-wide</li>
+						<!-- more than Amazon webservices and Google cloud combined! -->
+					</ul>
+				</section>
+				<section>
+					<h2>Microsoft Azure</h2>
+					<blockquote>
+						Microsoft is currently the only vendor to be positioned as a Leader in Gartner’s Magic Quadrants for Application Platform
+						as a Service, Cloud Infrastructure as a Service, Cloud Storage Services and x86 Server Virtualization.
+					</blockquote>
+				</section>
+				<section>
+					<h2>Microsoft Azure</h2>
+					<blockquote>
+						The first cloud provider recognised by the European Union’s data protection authorities for their commitment to rigorous EU privacy laws. Microsoft was also the first major cloud provider to adopt the new international cloud privacy standard, ISO 27018. 
+					</blockquote>
+				</section>
+				<section>
+					<h2>Azure for <span class="orange">web</span> and <span class="orange">mobile<span></h2>
+					<ul>
+						<li>App services</li>
+						<li>Mobile services</li>
+						<li>API management</li>
+						<li>Notification hubs</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Azure for <span class="orange">storage</span> and <span class="orange">analytics<span></h2>
+					<ul>
+						<li>SQL databases</li>
+						<li>Managed cache, redis cache, DocumentDB, ...</li>
+						<li>HDInsight (Hadoop), Machine Learning, Stream analytics</li>
+						<li>Data Lake Store and Analytics</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Everything is a microservice</h2>
+					<img src="img/streamanalytics.jpg"></img>
+				</section>
+				<section>
+					<h2>Everything is a microservice</h2>
+					<img src="img/cortanaanalytics.jpg"></img>
+				</section>
+				<section>
+					Demo app deployment and monitoring
+				</section>
+			</section>
+			
+			<!-- Azure Service Fabric -->
+			<section>
+				<section>
+					Now let's take this one step further...
+				</section>
+				<section>
+					Azure App Service offers a <span class="orange">high productivity platform</span> for deploying and scaling enterprise web and mobile services,
+					with seamless integration with other SaaS based applications.
+				</section>
+				<section>
+					The downside is that you end up with a very big bucket of microservices without mature tooling to manage them.	
+				</section>
+				<section>
+					<img src="img/microservicesproblems.png"></img>	
+				</section>
+				<section>
+					<img src="img/servicefabriclogo.png"></img>	
+				</section>
+				<section>
+					<h2>Azure Service Fabric - what it is</h2>
+					<ul>
+						<li class="fragment roll-in">Provides a <span class="orange">high control microservices platform</span></li>
+						<li class="fragment roll-in">Battle hardened in production for over five years</li>
+						<li class="fragment roll-in">Skype for Business, DocumentDB, Azure SQL server (>1.4m databases), Bing Cortana (>500m evals/sec)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Azure Service Fabric - what it offers</h2>
+					<ul>
+						<li class="fragment roll-in">It supports creating both <span class="orange">stateless</span> and <span class="orange">stateful</span> services</li>
+						<li class="fragment roll-in">Provides the benefits of orchestration and automation for microservices with new levels of app awareness and insight</li>
+						<li class="fragment roll-in">Solves hard distributed systems problems like state management and provides application lifecycle management capabilities</li>
+					</ul>
+				</section>
+				<section data-background="img/asf.png">
+					
+				</section>
+				<section>
+					<h2>Azure Service Fabric - service management</h2>
+					<ul>
+						<li class="fragment roll-in">In the cloud as well as on-premises</li>
+						<li class="fragment roll-in">Supports container technology</li>
+						<li class="fragment roll-in">Rolling updates, canary releases, health monitoring, auto-scaling, automatic rollback, ...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Azure Service Fabric - stateful services</h2>
+					<ul>
+						<li class="fragment roll-in">Support for stateful microservices</li>
+						<li class="fragment roll-in">Assemble stateful microservices into heavy-duty applications such as database back ends</li>
+						<li class="fragment roll-in">Service Fabric does the heavy lifting of replication, partitioning, transactional integrity, fault tolerance, high availability, and more</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Azure Service Fabric - Multiple programming models and SDK</h2>
+					<ul>
+						<li class="fragment roll-in">Actor programming model (Halo Online)</li>
+						<li class="fragment roll-in">SDK currently supports C++ and .NET</li>
+						<li class="fragment roll-in">Build and test on one machine, simulate clusters of hundreds of nodes on a single server</li>
+						<li class="fragment roll-in">Microsoft announced that Java, Python, PHP and NodeJS support will be added over time</li>
+					</ul>
+				</section>
+			</section>
+				
+			<!-- EINDE -->
+			<section>
+				<h2>Thank you<span class="orange">!</span></h2>
+				<p>Review this presentation at <a href="http://presentations.jberndsen.nl/microservices-with-microsoft/">http://presentations.jberndsen.nl/microservices-with-microsoft/</a></p>
+
+				<p>Reach <span class="orange">me</span> at <a href="mailto:jeroen.berndsen@trivento.nl">jeroen.berndsen@trivento.nl</a>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		<script>
-			// Full list of configuration options available at:
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
@@ -95,6 +313,7 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-		</script>
-	</body>
+	</script>
+</body>
+
 </html>
