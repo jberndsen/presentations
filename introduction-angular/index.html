@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Jeroen Berndsen: Angular introduction</title>
+
+	<meta name="description" content="Presentation: Angular introduction">
+	<meta name="author" content="Jeroen Berndsen">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+	<link rel="stylesheet" href="css/inputs.css">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- OPENING -->
+			<section data-background="img/angular_wallpaper.jpeg"></section>
+
+			<section data-background="img/toubkal_jeroen.jpg"></section>
+
+			<section data-background="img/frontmen.png"></section>
+
+			<!-- INTRODUCTION -->
+			<section>
+				<section data-background="img/backdrop_1.png">
+					<h2>Frontend development</h1>
+						<p class="fragment roll-in spacey">Website? Web app? Mobile apps? Desktop apps?</h3>
+							<p class="fragment roll-in light">User experience, Visual design, Javascript development, Testing, DevOps, ...</h3>
+				</section>
+
+				<section data-background="img/backdrop_2.png">
+					<ul class="white">
+						<li><strong>Connecting people to people</strong> and people to systems</li>
+						<li class="fragment roll-in">Frontend applications are about <strong>human interaction</strong></li>
+						<li class="fragment roll-in"><strong>Build fast and deploy often</strong> to stay ahead of competition</li>
+						<li class="fragment roll-in">Directly <strong>customer-facing</strong> apps require very <strong>high quality</strong> standards</li>
+					</ul>
+				</section>
+
+				<section data-background="img/backdrop_3.png">
+					<div style="width: 50%; float: left"><img src="img/toon.png" style="border: 0;"></div>
+					<div style="width: 50%; float: right">
+						<h4 class="spacey">Some common app properties</h3>
+							<ul>
+								<li class="fragment roll-in">Autonomous operation, offline capabilities, responsive design</li>
+								<li class="fragment roll-in">Intuitive user interface and interactions</li>
+								<li class="fragment roll-in">Real-time data analysis and visualization</li>
+								<li class="fragment roll-in">Definitely not a simple shell around a back-end system</li>
+							</ul>
+					</div>
+				</section>
+			</section>
+
+			<!-- building blocks of the web, JS popularity -->
+			<section>
+				<section data-background="img/backdrop_2.png">
+					<h2 class="white">Building blocks of the web</h2>
+					<ul class="white">
+						<li class="fragment roll-in"><strong>HTML</strong> primarily describes screen composition and addresses <strong>accessibility</strong> concerns</li>
+						<li class="fragment roll-in"><strong>CSS</strong> adds presentational properties for this composition, aesthetically pleasing effects and display
+							<strong>responsiveness</strong></li>
+						<li class="fragment roll-in"><strong>JavaScript</strong> is the programming language of the web. It adds the possibility of interaction and dynamic
+							behavior
+						</li>
+						<!--<li class="fragment roll-in">Browser vendors add <strong>Web APIs</strong> to further enhance capabilities: WebGL, WebVR, Web Audio, Service Workers,
+							Cryptography, …</li>-->
+					</ul>
+				</section>
+				<section data-background="img/backdrop_4.png">
+					<img src="img/js-so.png">
+				</section>
+				<section data-background="img/backdrop_4.png">
+					<h2 class="white">Javascript impact on Github</h2>
+					<img src="img/js-git.png">
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<p>”Any application that <span class="orange">can</span> be written in JavaScript, <span class="orange">will eventually be</span>						written in Javascript”</p>
+					<p class="spacey">
+						Atwood's Law
+					</p>
+				</section>
+			</section>
+
+			<!-- Frameworks -->
+			<section>
+				<section data-background="img/backdrop_2.png">
+					<h2 class="white">Frontend frameworks</h2>
+					<ul class="white">
+						<li class="fragment roll-in">Promise <strong>increased developer productivity</strong>, by providing solutions to common and often hard challenges</li>
+						<li class="fragment roll-in">They are the backbone of modern <strong>Single Page Applications</strong>: highly dynamic, data-driven apps that act
+							and feel like a native app</li>
+						<li class="fragment roll-in">Common challenges include event handling, data modelling, DOM manipulation, async operations, routing, state management,
+							…
+						</li>
+					</ul>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<div style="width: 50%; float: left"><img src="img/angular.png" style="border: 0;"></div>
+					<div style="width: 50%; float: right">
+						<h2 class="white">Angular</h2>
+						<ul class="white">
+							<li class="fragment roll-in">Low decision fatigue, less freedom, <strong>enforced consistency</strong> between apps and developers
+							</li>
+							<li class="fragment roll-in">Excellent tooling and testability: <strong>TypeScript</strong> and <strong>Angular CLI</strong>
+							</li>
+							<li class="fragment roll-in"><strong>Hard</strong> to learn, Angular-specific tags and mandatory tooling
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<div style="width: 50%; float: left"><img src="img/react.png" style="border: 0;"></div>
+					<div style="width: 50%; float: right">
+						<h2 class="white">React</h2>
+						<ul class="white">
+							<li class="fragment roll-in">The <strong>'view' layer</strong> of your app</li>
+							<li class="fragment roll-in">Requires further choices of libraries for common functionality</li>
+							<li class="fragment roll-in"><strong>JSX</strong>, put HTML in JS, fail fast and explicit</li>
+						</ul>
+					</div>
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<p>”Choosing between <span class="orange">Angular</span> and <span class="orange">React</span> is like choosing between
+						buying an off-the-shelf computer and building your own with off-the-shelf parts”
+					</p>
+				</section>
+			</section>
+
+			<!-- Angular -->
+			<section>
+				<section data-background="img/backdrop_2.png">
+					<div style="width: 50%; float: left"><img src="img/lego.png" style="border: 0;"></div>
+					<div style="width: 50%; float: right">
+						<h2 class="white">Components</h2>
+						<ul class="white">
+							<li class="fragment roll-in"><strong>Web components</strong> drive Separation of Concerns, enable functional re-use and haven give rise to the
+								development of style guides
+							</li>
+							<li class="fragment roll-in">Components are isolated, have clear I/O, are declarative and composable, making them easy to reason about</li>
+						</ul>
+					</div>
+				</section>
+				<section data-background="img/comp-0.png">
+				</section>
+				<section data-background="img/comp-1.png">
+				</section>
+				<section data-background="img/comp-2.png">
+				</section>
+				<section data-background="img/comp-3.png">
+				</section>
+				<section data-background="img/comp-4.png">
+				</section>
+				<section data-background="img/comp-5.png">
+				</section>
+				<section data-background="img/comp-6.png">
+				</section>
+				<section data-background="img/comp-7.png">
+				</section>
+				<section data-background="img/comp-8.png">
+				</section>
+				<section data-background="img/comp-9.png">
+				</section>
+				<section data-background="img/comp-10.png">
+				</section>
+				<section data-background="img/comp-11.png">
+				</section>
+				<section data-background="img/comp-0.png">
+				</section>
+				<section data-background="img/comp-12.png">
+				</section>
+			</section>
+
+			<!-- Code -->
+			<section>
+				<section data-background="img/backdrop_1.png">
+					<p>Angular enables you to create reusable components (custom HTML selectors) and combine them with services to form a web app.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<img src="img/component.png" style="border: 0;">
+					<p class="white">A component is the combination of a HTML template and a component class that controls a portion of the screen.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+				<pre><code data-trim>
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+})
+export class AppComponent { name = 'Angular'; }
+					</code>
+					</pre>
+					<p class="white">Every component begins with an <i>@Component</i> decorator function that takes a metadata object. The metadata object describes how the HTML template and component class work together.</p>
+				</section>
+								<section data-background="img/backdrop_5.png">
+				<pre><code data-trim>
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+})
+export class AppComponent { name = 'Angular'; }
+					</code>
+					</pre>
+					<p class="white">The selector property tells Angular to display the component inside a custom <span class="orange">&lt;my-app&gt;</span> tag in the <i>index.html</i>.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+				<pre><code data-trim>
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+})
+export class AppComponent { name = 'Angular'; }
+					</code>
+					</pre>
+					<p class="white">The template property defines a message inside a header. The message starts with "Hello" and ends with <span class="orange">{{name}}</span>, which is an Angular interpolation binding expression. At runtime, Angular replaces <span class="orange">{{name}}</span> with the value of the component's name property.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+				<pre><code data-trim>
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }  from './app.component';
+
+@NgModule({
+  imports:      [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+					</code>
+					</pre>
+					<p class="white">Module definition</p>
+				</section>
+								<section data-background="img/backdrop_5.png">
+				<pre><code data-trim>
+import { platformBrowserDynamic }
+			from '@angular/platform-browser-dynamic';
+import { AppModule } 	from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+					</code>
+					</pre>
+					<p class="white">Bootstrapping</p>
+				</section>
+			</section>
+
+			<!-- wrap up -->
+			<section data-background="img/backdrop_2.png">
+				<h2 class="white">The open-source community</h2>
+				<ul class="white">
+					<li class="fragment roll-in">The current frontend landscape is cowboy country. New developments come at mind-blowing speed.
+					</li>
+					<li class="fragment roll-in">Knowledge is freely shared through local meet-ups, GitHub, online courses, Twitter, Medium.com, weekly e-mail newsletters,
+						…
+					</li>
+					<li class="fragment roll-in"><strong>Great software is not build by great programmers, but by great teams.</strong></li>
+					<li class="fragment roll-in">You are not alone. Adopt a learning (or teaching!) mentality and avoid imposter syndrome
+					</li>
+				</ul>
+			</section>
+
+			<section data-background="img/backdrop_1.png">
+				<p>”It’s the only job I can think of where I get to be both an <span class="orange">engineer</span> and an <span class="orange">artist</span>.”</p>
+				<p class="spacey">
+					Andy Hertzfeld
+				</p>
+			</section>
+		</div>
+	</div>
+
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
