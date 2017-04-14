@@ -106,6 +106,13 @@
 						Atwood's Law
 					</p>
 				</section>
+				<section data-background="img/backdrop_1.png">
+					<h2 class="white">Javascript is everywhere</h2>
+					<img src="img/nodejs-logo.png" width="33%" style="border: 0" />
+					<img src="img/Ionic_Logo.png" width="33%" style="border: 0" />
+					<img src="img/electron.svg" width="33%" style="border: 0" />
+					<img src="img/nodebots.png" width="15%" style="border: 0" />
+				</section>
 			</section>
 
 			<!-- Frameworks -->
@@ -155,15 +162,22 @@
 
 			<!-- Angular -->
 			<section>
+				<section data-background="img/backdrop_1.png">
+					<h2>Web components</h2>
+					<p class="fragment roll-in spacey">HTML is our primary means of describing the GUI, but it is (currently) not extensible or very expressive.</p>
+					<p class="fragment roll-in light">Extend HTML with reusable custom element tags that encapsulate style, markup and functionality to build rich applications.</p>
+				</section>
 				<section data-background="img/backdrop_2.png">
 					<div style="width: 50%; float: left"><img src="img/lego.png" style="border: 0;"></div>
 					<div style="width: 50%; float: right">
 						<h2 class="white">Components</h2>
 						<ul class="white">
 							<li class="fragment roll-in"><strong>Web components</strong> drive Separation of Concerns, enable functional re-use and haven give rise to the
-								development of style guides
+								development of <strong>style guides</strong>
 							</li>
-							<li class="fragment roll-in">Components are isolated, have clear I/O, are declarative and composable, making them easy to reason about</li>
+							<li class="fragment roll-in">Components are <strong>isolated</strong>, have clear I/O, are declarative and composable, making them easy to reason
+								about
+							</li>
 						</ul>
 					</div>
 				</section>
@@ -195,58 +209,72 @@
 				</section>
 				<section data-background="img/comp-12.png">
 				</section>
+				<section data-background="img/backdrop_1.png">
+					<p class="spacey">Angular is what HTML would have been, if it was used to develop dynamic web applications.</p>
+				</section>
 			</section>
 
 			<!-- Code -->
 			<section>
 				<section data-background="img/backdrop_1.png">
-					<p>Angular enables you to create reusable components (custom HTML selectors) and combine them with services to form a web app.</p>
+					<p>Angular enables you to create reusable components (custom HTML selectors) and combine them with services to form a web
+						app.
+					</p>
 				</section>
 				<section data-background="img/backdrop_5.png">
 					<img src="img/component.png" style="border: 0;">
-					<p class="white">A component is the combination of a HTML template and a component class that controls a portion of the screen.</p>
+					<p class="white">A component is the combination of a HTML template with related styling and a component class that controls a portion
+						of the screen.</p>
 				</section>
 				<section data-background="img/backdrop_5.png">
-				<pre><code data-trim>
+					<pre><code data-trim>
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
 })
-export class AppComponent { name = 'Angular'; }
+export class AppComponent {
+  name = 'Angular';
+}
 					</code>
 					</pre>
-					<p class="white">Every component begins with an <i>@Component</i> decorator function that takes a metadata object. The metadata object describes how the HTML template and component class work together.</p>
+					<p class="white">Every component begins with an <i>@Component</i> decorator function that takes a metadata object. The metadata object
+						describes how the HTML template and component class work together.</p>
 				</section>
-								<section data-background="img/backdrop_5.png">
-				<pre><code data-trim>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
 })
-export class AppComponent { name = 'Angular'; }
+export class AppComponent {
+  name = 'Angular';
+}
 					</code>
 					</pre>
-					<p class="white">The selector property tells Angular to display the component inside a custom <span class="orange">&lt;my-app&gt;</span> tag in the <i>index.html</i>.</p>
+					<p class="white">The selector property tells Angular to display the component inside a custom <span class="orange">&lt;my-app&gt;</span>						tag in the <i>index.html</i>.</p>
 				</section>
 				<section data-background="img/backdrop_5.png">
-				<pre><code data-trim>
+					<pre><code data-trim>
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
 })
-export class AppComponent { name = 'Angular'; }
+export class AppComponent {
+  name = 'Angular';
+}
 					</code>
 					</pre>
-					<p class="white">The template property defines a message inside a header. The message starts with "Hello" and ends with <span class="orange">{{name}}</span>, which is an Angular interpolation binding expression. At runtime, Angular replaces <span class="orange">{{name}}</span> with the value of the component's name property.</p>
+					<p class="white">The template property defines a message inside a header. The message starts with "Hello" and ends with <span class="orange">{{name}}</span>,
+						which is an Angular interpolation binding expression. At runtime, Angular replaces <span class="orange">{{name}}</span>						with the value of the component's name property.</p>
 				</section>
 				<section data-background="img/backdrop_5.png">
-				<pre><code data-trim>
+					<pre><code data-trim>
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
@@ -259,10 +287,12 @@ import { AppComponent }  from './app.component';
 export class AppModule { }
 					</code>
 					</pre>
-					<p class="white">Module definition</p>
+					<p class="white">The <strong>module definition</strong> describes all the parts of the application and which root component should be
+						loaded.
+					</p>
 				</section>
-								<section data-background="img/backdrop_5.png">
-				<pre><code data-trim>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
 import { platformBrowserDynamic }
 			from '@angular/platform-browser-dynamic';
 import { AppModule } 	from './app/app.module';
@@ -270,7 +300,81 @@ import { AppModule } 	from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule);
 					</code>
 					</pre>
-					<p class="white">Bootstrapping</p>
+					<p class="white">The <strong>bootstrap</strong> function kicks off Angular with our module after the page is loaded.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
+@Component({
+  selector: 'avatar',
+  template: `&lt;img [src]="imageUrl" /&gt;`
+})
+export class AvatarComponent {
+  imageUrl = 'https://example.com/images/mr-awesome.png';
+}
+				</code></pre>
+					<p class="white">You can bind to properties using <strong>square brackets</strong>, such as the image <span class="orange">src</span>						property above.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
+@Component({
+  selector: 'shoutout-button',
+  template: `
+    &lt;button (click)="onClick()"&gt;Say what?!&lt;/button&gt;
+    {{message}}
+  `
+})
+export class ShoutoutComponent {
+  message = '';
+
+  onClick() {
+    this.message = 'Hello, Angular meetup!!';
+  }
+}					
+						</code></pre>
+					<p class="white">You can bind to events using <strong>parentheses</strong>, such as the button <span class="orange">click</span> event
+						above.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+
+@Injectable()
+export class ApiService {
+  constructor(private http: Http) { }
+
+  getUserData(username: string) {
+    return this.http.get(`/api/users/${username}`)
+      .map(result =&gt; result.json());
+  }
+}
+					</code></pre>
+					<p class="white">Services are simple TypeScript classes that offer reusable functionality.</p>
+				</section>
+				<section data-background="img/backdrop_5.png">
+					<pre><code data-trim>
+import {Component} from '@angular/core';
+import {ApiService} from './api.service';
+
+@Component({
+  selector: 'user',
+  template: `
+    &lt;input type="text" #username /&gt;
+    &lt;button (click)="getUser(username.value)" /&gt;
+    Hello, {{user.name}}!
+  `
+})
+export class UserComponent {
+  user = {};
+
+  constructor(private api: ApiService) {}
+
+  getUser(username) {
+    this.user = this.api.getUserData(username);
+  }
+}
+					</code></pre>
+					<p class="white"><strong>Dependency injection</strong> is used to grab hold of the services you want to use.</p>
 				</section>
 			</section>
 
