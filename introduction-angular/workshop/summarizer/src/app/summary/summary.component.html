@@ -2,6 +2,7 @@
   <md-card-header>
     <md-card-title>Find a summary</md-card-title>
   </md-card-header>
+  <img [src]="imgUrl" />
   <md-card-content>
     <p>
       {{ summary }}
@@ -11,6 +12,6 @@
     <md-input-container>
       <input mdInput #searchbox>
     </md-input-container>
-    <button md-button (click)="getSummary(searchbox.value)">Search!</button>
+    <button md-raised-button (click)="getSummary(searchbox.value)" color='accent'>Search!</button>
   </md-card-actions>
 </md-card>

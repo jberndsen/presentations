@@ -8,6 +8,7 @@ import { SummaryService } from '../summary.service';
 })
 export class SummaryComponent implements OnInit {
   private summary = 'Search for a summary';
+  private imgUrl = '';
 
   constructor(private summaryService: SummaryService) { }
 
@@ -15,8 +16,12 @@ export class SummaryComponent implements OnInit {
   }
 
   getSummary(searchText) {
-    return this.summaryService.getSummary(searchText).subscribe(result => {
-      this.summary = result;
+    this.summaryService.getSummary(searchText).subscribe(result => {
+      this.summary = result.extract;
     });
+
+    this.summaryService.getImage(searchText).subscribe(result => {
+      this.imgUrl = result.thumbnail.source;
+    })
   }
 }
