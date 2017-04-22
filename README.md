@@ -7,5 +7,6 @@ To access the mark-up code for the presentations, simply open the *gh-pages* bra
 
 The presentations can also be viewed in their true glory at:
 
+  - Introduction to Angular (2+): http://presentations.jberndsen.nl/introduction-angular
   - Introduction to AngularJS for .NET developers: http://presentations.jberndsen.nl/introduction-angular-for-dotnet/
   - Microservices with Microsoft: http://presentations.jberndsen.nl/microservices-with-microsoft
