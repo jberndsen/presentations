@@ -68,11 +68,11 @@
 					<div style="width: 50%; float: left"><img src="img/toon.png" style="border: 0;"></div>
 					<div style="width: 50%; float: right">
 						<h3 class="spacey">Some common app properties</h3>
-							<ul>
-								<li class="fragment roll-in">Autonomous operation, offline capabilities, responsive design</li>
-								<li class="fragment roll-in">Intuitive user interface and interactions</li>
-								<li class="fragment roll-in">Real-time data analysis and visualization</li>
-							</ul>
+						<ul>
+							<li class="fragment roll-in">Autonomous operation, offline capabilities, responsive design</li>
+							<li class="fragment roll-in">Intuitive user interface and interactions</li>
+							<li class="fragment roll-in">Real-time data analysis and visualization</li>
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -177,7 +177,7 @@
 						</ul>
 					</div>
 				</section>
-				
+
 				<section data-background="img/comp-0.png">
 				</section>
 				<section data-background="img/comp-1.png">
@@ -301,6 +301,8 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 				</section>
 				<section data-background="img/backdrop_5.png">
 					<pre><code data-trim>
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'avatar',
   template: `&lt;img [src]="imageUrl" /&gt;`
@@ -329,7 +331,8 @@ export class ShoutoutComponent {
 }					
 						</code></pre>
 					<p class="white">You can bind to events using <strong>parentheses</strong>, such as the button <span class="orange">click</span> event
-						above.</p>
+						above.
+					</p>
 				</section>
 				<section data-background="img/backdrop_5.png">
 					<pre><code data-trim>
@@ -350,9 +353,6 @@ export class ApiService {
 				</section>
 				<section data-background="img/backdrop_5.png">
 					<pre><code data-trim>
-import {Component} from '@angular/core';
-import {ApiService} from './api.service';
-
 @Component({
   selector: 'user',
   template: `
@@ -376,25 +376,20 @@ export class UserComponent {
 			</section>
 
 			<!-- wrap up -->
-			<section data-background="img/backdrop_2.png">
-				<h2 class="white">The open-source community</h2>
-				<ul class="white">
-					<li class="fragment roll-in">The current frontend landscape is cowboy country. New developments come at mind-blowing speed.
-					</li>
-					<li class="fragment roll-in">Knowledge is freely shared through local meet-ups, GitHub, online courses, Twitter, Medium.com, weekly e-mail newsletters,
-						…
-					</li>
-					<li class="fragment roll-in"><strong>Great software is not build by great programmers, but by great teams.</strong></li>
-					<li class="fragment roll-in">You are not alone. Adopt a learning (or teaching!) mentality and avoid imposter syndrome
-					</li>
-				</ul>
-			</section>
-
 			<section data-background="img/backdrop_1.png">
 				<p>”It’s the only job I can think of where I get to be both an <span class="orange">engineer</span> and an <span class="orange">artist</span>.”</p>
 				<p class="spacey">
 					Andy Hertzfeld
 				</p>
+			</section>
+			<section>
+				<div style="width: 70%; float: left"><img src="img/frontmen-2.png" style="border: 0;"></div>
+				<div style="width: 30%; float: right">
+					<p>Thank you!</p>
+					<p class="spacey">Reach me at <span class="orange">jeroen@frontmen.nl</span></p>
+					
+				</div>
+				<p class="light">http://presentations.jberndsen.nl/introduction-angular</p>
 			</section>
 		</div>
 	</div>
