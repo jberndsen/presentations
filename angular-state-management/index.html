@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Jeroen Berndsen: Angular state management</title>
+
+	<meta name="description" content="Presentation: Angular state management">
+	<meta name="author" content="Jeroen Berndsen">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+	<link rel="stylesheet" href="css/inputs.css">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- OPENING -->
+			<!-- todo: reusable title slide -->
+			<section data-background="img/angular_wallpaper.jpeg"></section>
+
+			<section data-background="img/toubkal_jeroen.jpg"></section>
+
+			<section data-background="img/frontmen.png"></section>
+
+			<!-- INTRODUCTION -->
+			<section>
+				<section data-background="img/backdrop_2.png">
+					(plaatje, component blokje met duidelijke IO)
+					met angular ontwikkelen we herbruikbare geisoleerde componenten
+				</section>
+				<section data-background="img/backdrop_2.png">
+					(plaatje van componenten in een boomstructuur)
+					met componenten bouwen we onze app in een boomstructuur op
+				</section>
+				<section data-background="img/backdrop_2.png">
+					(plaatje van chaotische pijltjes in de boomstructuur)
+					het managen van state is met deze opzet moeilijker. alle componenten een stukje state met een stukje gedrag.
+					grote kans op inconsistentie als meerdere componenten over dezelfde data gaan maar niet synchroon updaten.
+					slecht debugbaar als een app niet meer consistent is, vooral als dit b.v. alleen in productie voorkomt door een race condition.
+				</section>
+			</section>
+
+			<!-- WHAT IS STATE MANAGEMENT -->
+			<section>
+				<section>
+					wat is state?
+				</section>
+				<section>
+					Welke vormen van state zijn er in onze app?
+					- server
+					- client persistent
+					- router/url
+					- client transient state
+				</section>
+				<section>
+					Welke problemen lossen we op in deze presentatie?
+					- uniforme eenduidige state, consistente app
+					- synchronisatie tussen verschillende vormen van state (router)
+					- netwerk race conditions
+					- (makkelijker te testen)
+					- (time travel debugging)
+				</section>
+			</section>
+
+			<!-- Redux -->
+			<section>
+				<section>het idee: maak de state expliciet op 1 plek in je applicatie </section>
+				<section>baseer het scherm volledig op de state, i.e. (state) -> UI </section>
+				<section>De enige manier om de state te veranderen is middels Actions, objecten die beschrijven wat is gebeurd</section>
+				<section>Reducers (pure functies!) beschrijven hoe de actions de state veranderen </section>
+			</section>
+
+			<!-- The store and view, think of as database -->
+			<section>
+				gevormd door initiele data (meestal een lege array of object), waardevol om te typeren.
+				en functies (reducers) die beschrijven hoe de state veranderd op basis van een actie
+			</section>
+
+			<!-- actions, action creators -->
+			<section>
+				een actie is simpelweg een object die beschrijft wat er is gebeurd.
+				heeft een type (om hem aan te herkennen) en optioneel een payload (extra data)
+				gebruik action creators om ze meer herbruikbaar en testbaar te maken
+				Typescript classes lenen zich hier goed voor, zo kan je ook de payload typeren.
+				Bij acties is de verwachting van de vorm van de data (payload) groot, reducer implementatie leunt hier op
+			</section>
+
+			<!-- reducers, think of as tables -->
+			<section>
+				Een reducer beschrijft hoe een gegeven de huidige state en een actie de state veranderd. (state, action) -> state*
+				Is een pure functie. als dit niet zo zou zijn kunnen we niet time-travel debuggen, omdat het niet mogelijk is
+				correct tussen states te switchen.
+			</section>
+
+
+
+			<!-- router state synchroniseren: maak de router single source of truth + router-store -->
+
+			<!-- netwerk race condities: switchMap pakt altijd de laatste, expliciete undo strategy -->
+
+			<!-- inconsistentie in de state: genormaliseerde data en selectors, think of as queries -->
+
+			<!-- performance in NG2: immutability and changedetectionstrategy -->
+			Immutably updating state generally means making shallow copies, not deep copies. Shallow copies are much faster than deep copies, because fewer objects and fields have to be copied, and it effectively comes down to moving some pointers around.
+
+However, you do need to create a copied and updated object for each level of nesting that is affected. Although that shouldn't be particularly expensive, it's another good reason why you should keep your state normalized and shallow if possible.
+
+Common Redux misconception: you need to deeply clone the state. Reality: if something inside doesn't change, keep its reference the same!
+Immutability can bring increased performance to your app, and leads to simpler programming and debugging, as data that never changes is easier to reason about than data that is free to be changed arbitrarily throughout your app.
+
+In particular, immutability in the context of a Web app enables sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to
+			<!-- CLOSING -->
+			<section>
+				<div style="width: 70%; float: left"><img src="img/frontmen-2.png" style="border: 0;"></div>
+				<div style="width: 30%; float: right">
+					<p>Thank you!</p>
+					<p class="spacey">Reach me at <span class="orange">jeroen@frontmen.nl</span></p>
+					
+				</div>
+				<p class="light">http://presentations.jberndsen.nl/angular-state-management</p>
+			</section>
+		</div>
+	</div>
+ 
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: false,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
