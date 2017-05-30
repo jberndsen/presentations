@@ -50,50 +50,76 @@
 
 			<!-- INTRODUCTION -->
 			<section>
-				<section data-background="img/backdrop_2.png">
-					(plaatje, component blokje met duidelijke IO)
-					met angular ontwikkelen we herbruikbare geisoleerde componenten
+				<section>
+					<p>Angular is all about creating isolated, declarative, reusable components.</p>
+					<img src="img/view component.png" />
 				</section>
-				<section data-background="img/backdrop_2.png">
-					(plaatje van componenten in een boomstructuur)
-					met componenten bouwen we onze app in een boomstructuur op
+				<section>
+					<p>An Angular app is composed of these components</p>
+					<img src="img/component tree.png" />
 				</section>
-				<section data-background="img/backdrop_2.png">
-					(plaatje van chaotische pijltjes in de boomstructuur)
-					het managen van state is met deze opzet moeilijker. alle componenten een stukje state met een stukje gedrag.
-					grote kans op inconsistentie als meerdere componenten over dezelfde data gaan maar niet synchroon updaten.
-					slecht debugbaar als een app niet meer consistent is, vooral als dit b.v. alleen in productie voorkomt door een race condition.
+				<section>
+					<p>Often, application data is reflected in multiple components. This introduces a synchronisation problem when a component decides to update this data.</p>
+				</section>
+				<section>
+					<p>Ad-hoc solutions would mean components cannot be developed in isolation.</p>
+					<img src="img/no redux.png" />
+				</section>
+				<section>
+					<ul>
+						<li>Development complexity increased, because developer needs to be aware of impact on the entire application.</li>
+						<li>Tracing the origin of inconsistency issues is non-trivial.</li>
+						<li>Even more so in production, app can get out of sync due to networking errors.</li>
+					</ul>
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<p><strong>State management</strong> is about choosing an explicit strategy for dealing with this data synchronization problem.</p>
+				</section>
+				<section>
+					<p><strong>Problem 1:</strong> Ensuring that the application is consistent within itself.</p>
+				</section>
+				<section>
+					<p><strong>Problem 2:</strong> Enabling developers to reason about components in an isolated fashion.</p>
+				</section>
+				<section>
+					<p><strong>Problem 3:</strong> Allowing for consistent reasoning about application state, even in the face of network race conditions.</p>
+				</section>
+				<section>
+					<p><strong>Problem 4:</strong> Testability and tooling to inspect application state behavior.</p>
 				</section>
 			</section>
 
 			<!-- WHAT IS STATE MANAGEMENT -->
 			<section>
 				<section>
-					wat is state?
+					<h2>Types of state</h2>
+					<p class="spacey">
+						<p class="fragment roll-in">Back-end state: Server responses and cached data</p>
+						<p class="fragment roll-in">Client persistent state: locally created data and UI state</p>
+						<p class="fragment roll-in"> Router / URL state</p>
+					</p>
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<strong>Redux</strong> is a popular solution that attempts to make state mutations predictable by imposing restrictions on how and when updates can happen.
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<p><strong>Rule 1:</strong> The state of your whole application is stored in an object tree within a single store.</p>
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<strong>Rule 2:</strong> The state is read-only. Components subscribe to store changes and render accordingly.
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<p><strong>Rule 3:</strong> The only way to change the store is to emit an action, an object describing what happened.</strong></p>	
+				</section>
+				<section data-background="img/backdrop_1.png">
+					<strong>Rule 4:</strong> To specify how the state tree is transformed by actions, you write pure <i>reducer</i> functions.
 				</section>
 				<section>
-					Welke vormen van state zijn er in onze app?
-					- server
-					- client persistent
-					- router/url
-					- client transient state
+					<img src="img/no redux.png" />
 				</section>
 				<section>
-					Welke problemen lossen we op in deze presentatie?
-					- uniforme eenduidige state, consistente app
-					- synchronisatie tussen verschillende vormen van state (router)
-					- netwerk race conditions
-					- (makkelijker te testen)
-					- (time travel debugging)
+					<img src="img/redux.png" />
 				</section>
-			</section>
-
-			<!-- Redux -->
-			<section>
-				<section>het idee: maak de state expliciet op 1 plek in je applicatie </section>
-				<section>baseer het scherm volledig op de state, i.e. (state) -> UI </section>
-				<section>De enige manier om de state te veranderen is middels Actions, objecten die beschrijven wat is gebeurd</section>
-				<section>Reducers (pure functies!) beschrijven hoe de actions de state veranderen </section>
 			</section>
 
 			<!-- The store and view, think of as database -->
@@ -127,6 +153,7 @@
 			<!-- inconsistentie in de state: genormaliseerde data en selectors, think of as queries -->
 
 			<!-- performance in NG2: immutability and changedetectionstrategy -->
+			<section>
 			Immutably updating state generally means making shallow copies, not deep copies. Shallow copies are much faster than deep copies, because fewer objects and fields have to be copied, and it effectively comes down to moving some pointers around.
 
 However, you do need to create a copied and updated object for each level of nesting that is affected. Although that shouldn't be particularly expensive, it's another good reason why you should keep your state normalized and shallow if possible.
@@ -135,6 +162,7 @@ Common Redux misconception: you need to deeply clone the state. Reality: if some
 Immutability can bring increased performance to your app, and leads to simpler programming and debugging, as data that never changes is easier to reason about than data that is free to be changed arbitrarily throughout your app.
 
 In particular, immutability in the context of a Web app enables sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to
+</section>
 			<!-- CLOSING -->
 			<section>
 				<div style="width: 70%; float: left"><img src="img/frontmen-2.png" style="border: 0;"></div>
